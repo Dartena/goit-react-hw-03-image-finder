@@ -75,7 +75,7 @@ class App extends Component {
       <AppDiv>
         <Searchbar onSubmit={this.search} />
         <ImageGallery searchResult={searchResult} openPhoto={this.openPhoto} />
-        {searchResult.length % api.perPage === 0 ? (
+        {searchResult.length % api.perPage === 0 && searchResult.length > 0 ? (
           <Button textContent="Load More" onClick={this.loadMore} />
         ) : (
           ""
