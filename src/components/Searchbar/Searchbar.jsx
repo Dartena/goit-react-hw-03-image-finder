@@ -5,6 +5,7 @@ import {
   SearchBtn,
   SearchBtnLabel,
   SearchForm,
+  SearchIcon,
   SearchInput,
 } from "../styles/styled";
 
@@ -18,6 +19,7 @@ export default class Searchbar extends Component {
   onSubmitHandler = (event) => {
     event.preventDefault();
     this.props.onSubmit(this.state.searchQuery);
+    event.currentTarget.searchQuery.value = "";
   };
 
   onChangeHandler = (event) => {
@@ -32,13 +34,13 @@ export default class Searchbar extends Component {
       <SearchBar>
         <SearchForm onSubmit={this.onSubmitHandler}>
           <SearchBtn type="submit">
+            <SearchIcon />
             <SearchBtnLabel>Search</SearchBtnLabel>
           </SearchBtn>
 
           <SearchInput
             name="searchQuery"
-            type="text"
-            autoComplete="off"
+            type="search"
             autoFocus
             placeholder="Search images and photos"
             onChange={this.onChangeHandler}

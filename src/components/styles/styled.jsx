@@ -1,10 +1,10 @@
 import styled from "styled-components";
+import { CgSearch } from "react-icons/cg";
 
 const AppDiv = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 16px;
-  padding-bottom: 24px;
 `;
 
 const SearchBar = styled.header`
@@ -40,11 +40,8 @@ const SearchBtn = styled.button`
   display: inline-block;
   width: 48px;
   height: 48px;
+  padding: 17px;
   border: 0;
-  background-image: url("https://image.flaticon.com/icons/svg/149/149852.svg");
-  background-size: 40%;
-  background-repeat: no-repeat;
-  background-position: center;
   opacity: 0.6;
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
@@ -52,6 +49,11 @@ const SearchBtn = styled.button`
   :hover {
     opacity: 1;
   }
+`;
+
+const SearchIcon = styled(CgSearch)`
+  font-size: inherit;
+  text-align: center;
 `;
 
 const SearchBtnLabel = styled.span`
@@ -94,10 +96,11 @@ const GalleryList = styled.ul`
   margin-right: auto;
 `;
 
-const ImageGalleryItem = styled.li`
+const GalleryItem = styled.li`
   border-radius: 2px;
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
     0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+  position: relative;
 `;
 
 const GalleryImg = styled.img`
@@ -154,17 +157,21 @@ const ModalDiv = styled.div`
   max-height: calc(100vh - 24px);
 `;
 
+const Error = styled.p``;
+
 export {
   AppDiv,
   SearchBar,
   SearchForm,
   SearchBtn,
+  SearchIcon,
   SearchBtnLabel,
   SearchInput,
   GalleryList,
-  ImageGalleryItem,
+  GalleryItem,
   GalleryImg,
   Btn,
   Overlay,
   ModalDiv,
+  Error,
 };
