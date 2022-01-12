@@ -21,7 +21,7 @@ class App extends Component {
     loading: false,
   };
 
-  async componentDidMount() {
+  componentDidMount() {
     this.setState({
       searchQuery: api.query,
       savedSearchQuery: api.query,
@@ -29,7 +29,7 @@ class App extends Component {
     });
   }
 
-  async componentDidUpdate(_, prevState) {
+  componentDidUpdate(_, prevState) {
     const { searchQuery } = this.state;
     if (prevState.searchQuery !== searchQuery) {
       this.fetchImages();
